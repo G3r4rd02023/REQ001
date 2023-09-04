@@ -17,6 +17,7 @@ namespace REQ001.Helpers
         Task<bool> IsUserInRoleAsync(User user, string roleName);
         Task<SignInResult> LoginAsync(LoginViewModel model);
         Task LogoutAsync();
+        Task<User> AddUserAsync(AddUserViewModel model, string path);
 
 
     }

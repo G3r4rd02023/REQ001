@@ -1,0 +1,38 @@
+﻿@model REQ001.Models.EditUserViewModel
+
+<div class="row">
+
+    <div class="form-group">
+        <input asp-for="Document" type="text" class="form-control" placeholder="Identidad" />
+        <span asp-validation-for="Document" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <input asp-for="FirstName" type="text" class="form-control" placeholder="Nombres" />
+        <span asp-validation-for="FirstName" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <input asp-for="LastName" type="text" class="form-control" placeholder="Apellidos" />
+        <span asp-validation-for="LastName" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <input asp-for="Address" type="text" class="form-control" placeholder="Direccion" />
+        <span asp-validation-for="Address" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <div class="form-group">
+            <input asp-for="PhoneNumber" type="text" class="form-control" placeholder="Telefono" />
+            <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <input asp-for="ImageFile" type="file" class="form-control" placeholder="Foto" />
+        <span asp-validation-for="ImageFile" class="text-danger"></span>
+    </div>
+
+</div>
+

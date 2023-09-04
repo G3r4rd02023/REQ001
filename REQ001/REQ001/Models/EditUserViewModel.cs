@@ -1,10 +1,11 @@
-﻿using Microsoft.AspNetCore.Identity;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 
-namespace REQ001.Data.Entities
+namespace REQ001.Models
 {
-    public class User : IdentityUser
+    public class EditUserViewModel
     {
+        public string Id { get; set; }
+
         [Display(Name = "Documento")]
         [MaxLength(20, ErrorMessage = "El campo {0} debe tener máximo {1} caractéres.")]
         [Required(ErrorMessage = "El campo {0} es obligatorio.")]
@@ -25,22 +26,21 @@ namespace REQ001.Data.Entities
         [Required(ErrorMessage = "El campo {0} es obligatorio.")]
         public string Address { get; set; }
 
+        [Display(Name = "Teléfono")]
+        [MaxLength(20, ErrorMessage = "El campo {0} debe tener máximo {1} caractéres.")]
+        [Required(ErrorMessage = "El campo {0} es obligatorio.")]
+        public string PhoneNumber { get; set; }
+
         [Display(Name = "Foto")]
         public string? ImageUrl { get; set; }
 
         [Display(Name = "Foto")]
         public string ImageFullPath => string.IsNullOrEmpty(ImageUrl)
-          ? null
-         //: $"https://localhost:7187/images/noimage.png";
-         : $"https://localhost:7187/{ImageUrl.Substring(1)}";
+            ? null
+           //: $"https://localhost:7187/images/noimage.png";
+           : $"https://localhost:7187/{ImageUrl.Substring(1)}";
 
-        [Display(Name = "Usuario")]
-        public string FullName => $"{FirstName} {LastName}";
-
-        [Display(Name = "Usuario")]
-        public string FullNameWithDocument => $"{FirstName} {LastName} - {Document}";
-
-
-
+        [Display(Name = "Imagen")]
+        public IFormFile? ImageFile { get; set; }
     }
 }

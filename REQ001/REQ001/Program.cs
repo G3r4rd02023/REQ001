@@ -25,6 +25,7 @@ builder.Services.AddIdentity<User, IdentityRole>(cfg =>
 
 builder.Services.AddTransient<SeedDb>();
 builder.Services.AddScoped<IUserHelper, UserHelper>();
+builder.Services.AddScoped<IImageHelper, ImageHelper>();
 
 var app = builder.Build();
 SeedData(app);
